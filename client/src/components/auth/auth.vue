@@ -2,9 +2,9 @@
   <div class="user">
     <div class="user-left">
 
-      <div class="user-logo"></div>
+      <div class="user-logo">iCome版本发布</div>
       <div class="user-divier"></div>
-      <div class="user-name">爱发布</div>
+      <div class="user-name">www.icome.work</div>
 
       <div class="user-item" style="margin-top: 24.87vh" @click="clickSubItem('api')">
         <span class="icon-ic_api_s"></span>
@@ -240,12 +240,12 @@
             .replace('http://', '')
             .replace('www.', '')
 
-          let href = `http://wiki.${domain}`
+          let href = `http://www.icome.work`
           console.log(href)
           window.open(href, '_blank')
         }
         if (data === 'github') {
-          let herf = 'https://github.com/HeadingMobile'
+          let herf = 'https://github.com/liudongpu/apps-publish'
           window.open(herf, '_blank')
         }
         if (data.index === 'About') {
@@ -301,7 +301,9 @@
     margin-top: 17.6vh;
     background-size: 210px 40px;
     background-repeat: no-repeat;
-    background-image: url("../../assets/logo_w.png");
+    color: #ffffff;
+    text-align: center;
+    font-size: 24px;
   }
 
   .user-divier {

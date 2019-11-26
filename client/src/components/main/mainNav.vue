@@ -1,7 +1,7 @@
 <template>
   <div class="mainNav-wrapper">
     <div class="mainNav-logo">
-      <img src="../../assets/logo_s.png" alt="" @click="clickLogo">
+      <div style="height: 50px;align-items: center;justify-content: center;">iCome</div>
       <div class="line"></div>
     </div>
 
@@ -143,11 +143,11 @@
             .replace('http://', '')
             .replace('www.', '')
 
-          let href = `http://wiki.${domain}`
+          let href = `http://www.icome.work`
           window.open(href, '_blank')
         }
         if (data.index === 'GitHub') {
-          let herf = 'https://github.com/HeadingMobile'
+          let herf = 'https://github.com/liudongpu/apps-publish'
           window.open(herf, '_blank')
         }
         if (data.index === 'About') {
