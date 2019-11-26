@@ -98,7 +98,18 @@
       }
     },
     mounted() {
-      this.getAppInfo(this.$route.params.id)
+
+      var projectId=this.$route.params.id;
+       if (this.isIos && projectId.endsWith("-android")){
+         projectId=projectId.replace("-android","-ios");
+       }
+       else if (this.isAndroid && projectId.endsWith("-ios")){
+         projectId=projectId.replace("-ios","-android");
+       } 
+
+
+
+      this.getAppInfo(projectId)
 
       // 判断是否是手机设备
       if (this.isIos || this.isAndroid) {

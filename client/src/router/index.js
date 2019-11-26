@@ -9,6 +9,7 @@ import Router from 'vue-router'
 // import TeamMgr from '../components/team/teamMgr.vue'
 
 Vue.use(Router)
+"a".endsWith
 
 export default new Router({
   // 去除#
