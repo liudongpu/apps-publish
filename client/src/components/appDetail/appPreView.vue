@@ -26,7 +26,7 @@
               <p v-if="this.appVersionInfo.versionStr" class="desc">版本：{{this.appVersionInfo.versionStr}}</p><span>大小：{{(this.appVersionInfo.size/1024/1024).toFixed(1)}}M</span>
             </div>
             <p class="date">发布日期： {{ this.appVersionInfo.creatDateStr }} </p>
-            <p class="info"><a href="{{this.appVersionInfo.downloadUrl}}" target="_blank">下载地址</a> </p>
+            <p class="info"  @click="clickDownloadLink">下载安装包地址 </p>
             <div v-if="showPasswordInput">
               <el-input v-model="pwd" type="password" placeholder="请输入密码" class="pwd"></el-input>
               <el-button @click="clickSure" type="primary" round class="downloadBtn">确定</el-button>
@@ -158,6 +158,16 @@
       getIconUrl() {
         return `${this.axios.defaults.baseURL}${this.appBaseData.icon}`
       },
+
+      clickDownloadLink(){
+
+        const a = document.createElement('a')
+          let url = `${this.axios.defaults.baseURL}${this.appVersionInfo.downloadUrl}`
+          a.setAttribute('href', url)
+          a.click()
+
+      },
+
       clickDownLoadBtn() {
         if (this.isIos) {
           const a = document.createElement('a')
