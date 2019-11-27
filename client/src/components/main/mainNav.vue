@@ -1,7 +1,7 @@
 <template>
   <div class="mainNav-wrapper">
     <div class="mainNav-logo">
-      <div style="height: 50px;align-items: center;justify-content: center;">iCome</div>
+      <div style="align-items: center;justify-content: center;font-size: 30px;color: #6477f2;padding-top: 20px;font-weight: bold;">iCome</div>
       <div class="line"></div>
     </div>
 
