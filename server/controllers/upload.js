@@ -149,6 +149,10 @@ async function parseAppAndInsertToDB(file, user, team) {
         await version.save()
         return { 'app': app, 'version': version }
     }
+    else{
+        app.currentVersion = info.versionCode
+        await app.save()
+    }
     var version = await Version.findOne({ appId: app.id, versionCode: info.versionCode })
     if (!version) {
         info.uploader = user.username;
