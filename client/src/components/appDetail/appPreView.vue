@@ -48,7 +48,7 @@
       <el-dialog
         title="提示信息"
         :visible.sync="dialogVisible"
-        width="30%">
+        width="80%">
         <span>由于微信不支持此操作，请点击右上角小图标然后选择在浏览器中打开</span>
         <span slot="footer" class="dialog-footer">
         
@@ -184,8 +184,9 @@
       clickDownLoadBtn() {
 
         if(navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1){
-          alert("请在非微信的浏览器下打开");
+          //alert("请在非微信的浏览器下打开");
           this.dialogVisible=true;
+          return ;
          
         }
 
