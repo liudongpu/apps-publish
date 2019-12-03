@@ -46,6 +46,16 @@
         </div>
       </div>
     </div>
+    <el-dialog
+    title="提示信息"
+    :visible.sync="dialogVisible"
+    width="30%">
+    <span>由于微信不支持此操作，请点击右上角小图标然后选择在浏览器中打开</span>
+    <span slot="footer" class="dialog-footer">
+     
+      <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+    </span>
+  </el-dialog>
 </template>
 
 <script type="text/ecmascript-6">
@@ -65,7 +75,8 @@
         downloadUrl: '',
         platformStr: '',
         pwd: '',
-        isPhone: false
+        isPhone: false,
+        dialogVisible: false
       }
     },
     computed: {
@@ -170,6 +181,13 @@
       },
 
       clickDownLoadBtn() {
+
+        if(navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1){
+          this.dialogVisible=true;
+         
+        }
+
+
         if (this.isIos) {
           const a = document.createElement('a')
 //            `itms-services://?action=download-manifest&url=${this.axios.defaults.baseURL}api/plist/${this.appBaseData._id}/${this.appVersionInfo._id}`
