@@ -184,6 +184,7 @@
       clickDownLoadBtn() {
 
         if(navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1){
+          alert("请在非微信的浏览器下打开");
           this.dialogVisible=true;
          
         }
