@@ -45,17 +45,18 @@
           <p class="platform">适用于{{this.platformStr}}系统</p>
         </div>
       </div>
+      <el-dialog
+        title="提示信息"
+        :visible.sync="dialogVisible"
+        width="30%">
+        <span>由于微信不支持此操作，请点击右上角小图标然后选择在浏览器中打开</span>
+        <span slot="footer" class="dialog-footer">
+        
+          <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+        </span>
+      </el-dialog>
     </div>
-    <el-dialog
-    title="提示信息"
-    :visible.sync="dialogVisible"
-    width="30%">
-    <span>由于微信不支持此操作，请点击右上角小图标然后选择在浏览器中打开</span>
-    <span slot="footer" class="dialog-footer">
-     
-      <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-    </span>
-  </el-dialog>
+    
 </template>
 
 <script type="text/ecmascript-6">
