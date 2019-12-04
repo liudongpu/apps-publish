@@ -120,7 +120,8 @@
         }
       },
       onRegister() {
-        this.showType = this.showType === 'register' ? 'login' : 'register'
+        alert("注册通道已关闭，如果需要新注册请联系icome技术支持");
+        //this.showType = this.showType === 'register' ? 'login' : 'register'
       },
       onForget() {
         this.$prompt('请输入邮箱,我们会发送新密码到您到邮箱', '提示', {
