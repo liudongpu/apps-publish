@@ -45,7 +45,8 @@ var middleware = koajwt({ secret: config.secret, debug: true }).unless({
         '/api/swagger.json',
         /\/api\/plist\/.+/,
         /\/api\/count\/.+/,
-        /\/api\/app\/.+/
+        /\/api\/app\/.+/,
+        /\/api\/version\/.+/
     ]
 })
 
