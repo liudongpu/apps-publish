@@ -192,9 +192,22 @@
         })
       },
       clickEditor(item) {
+
+        //这里 注释掉原先的编辑功能  改为查看这个版本
+        /*
         this.showEditorVersion = true
         item.appName = this.appInfo.appName
         this.versionInfo = item
+        */
+
+
+       const {href} = this.$router.resolve({
+          name: 'AppVersion',
+          path: '/',
+          params: { 'id': item._id }
+        })
+        window.open(href, '_blank')
+
       },
       clickPreview(item) {
         const {href} = this.$router.resolve({

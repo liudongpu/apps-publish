@@ -448,6 +448,38 @@ module.exports = class AppRouter {
         ctx.body = responseWrapper({ 'app': app, 'version': version })
     }
 
+
+
+    @request('get', '/api/version/{versionId}')
+    @summary("获取版本的历史")
+    @tag
+    @path({ appShortUrl: { type: 'string', require: true } })
+    static async getAppByVersion(ctx, next) {
+        var { appId, versionId } = ctx.validatedParams
+        
+        var version = await Version.findOne({ _id: versionId })
+        var app = await App.findOne({ _id: version.appId })
+        if (!app) {
+            throw new Error("应用不存在")
+        }
+         
+
+        
+
+        if (!version) {
+            ctx.body = responseWrapper(false, "当前没有可用版本可供下载")
+        } else {
+            ctx.body = responseWrapper({
+                app: app,
+                version: version
+            })
+        }
+
+        ctx.body = responseWrapper({ 'app': app, 'version': version })
+    }
+
+
+
     @request('post', '/api/app/{appId}/{versionId}')
     @summary('取消发布版本')
     @tag

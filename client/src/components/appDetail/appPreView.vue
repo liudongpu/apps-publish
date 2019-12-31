@@ -120,7 +120,7 @@
          projectId=projectId.replace("-ios","-android");
        } 
 
-
+      
 
       this.getAppInfo(projectId)
 
@@ -146,8 +146,26 @@
       },
       getAppInfo(shortUrl) {
         AppResourceApi.getAppInfoByShortUrl(shortUrl).then((res) => {
-          console.log(res)
-          if (res.data.version === null) {
+          this.appResData(res);
+
+        }, reject => {
+          this.$message.error('服务器错误')
+        })
+      },
+
+      getAppVersion(versionId) {
+        AppResourceApi.getAppInfoByVersionId(versionId).then((res) => {
+          this.appResData(res);
+
+        }, reject => {
+          this.$message.error('服务器错误')
+        })
+      },
+
+
+      appResData(res){
+        //console.log(res)
+        if (res.data.version === null) {
               this.$message.error('未检测到版本信息')
               return
           }
@@ -163,11 +181,9 @@
           } else {
             this.installWithPwd = false
           }
-
-        }, reject => {
-          this.$message.error('服务器错误')
-        })
       },
+
+
       getIconUrl() {
         return `${this.axios.defaults.baseURL}${this.appBaseData.icon}`
       },

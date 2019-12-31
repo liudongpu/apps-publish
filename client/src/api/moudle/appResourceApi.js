@@ -41,6 +41,13 @@ export function getAppInfoByShortUrl(appShortUrl) {
   return getHttp(url)
 }
 
+
+// 通过版本号获取应用信息
+export function getAppInfoByVersionId(versionId) {
+  let url = `api/version/${versionId}`
+  return getHttp(url)
+}
+
 // 发布应用
 export function releaseApp(teamId, id, versionId, versionCode, release) {
   let body = {

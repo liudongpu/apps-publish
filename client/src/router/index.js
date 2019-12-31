@@ -57,6 +57,11 @@ export default new Router({
       component: resolve => require(['@/components/user/userInfo.vue'], resolve)
     },
     {
+      path: '/v/:id',
+      name: 'AppVersion',
+      component: resolve => require(['@/components/appDetail/appPreView.vue'], resolve)
+    },
+    {
       path: '/:id',
       name: 'AppPreView',
       component: resolve => require(['@/components/appDetail/appPreView.vue'], resolve)
