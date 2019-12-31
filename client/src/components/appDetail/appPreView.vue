@@ -120,9 +120,14 @@
          projectId=projectId.replace("-ios","-android");
        } 
 
-      
+      if(this.$route.name&&this.$route.name==="AppVersion"){
+        this.getAppVersion(projectId)
+      }
+      else{
+        this.getAppInfo(projectId)
+      }
 
-      this.getAppInfo(projectId)
+      
 
       // 判断是否是手机设备
       if (this.isIos || this.isAndroid) {
