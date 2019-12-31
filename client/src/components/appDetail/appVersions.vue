@@ -232,7 +232,7 @@
       getCreatTime(date) {
         console.log(date)
         let releaseDate = new Date(date)
-        return `${releaseDate.getFullYear()}-${releaseDate.getMonth() + 1}-${releaseDate.getDate()}`
+        return `${releaseDate.toLocaleString()} `
       },
       getAppSize(size) {
         return `${(size / 1024 / 1024).toFixed(2)}M`
