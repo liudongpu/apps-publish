@@ -45,7 +45,7 @@
         </el-table-column>
         <el-table-column
           label="更新时间"
-          width="150"
+          width="200"
         >
           <template slot-scope="scope">
             <p v-html="getCreatTime(scope.row.uploadAt)"></p>
