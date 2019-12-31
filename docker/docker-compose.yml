@@ -5,7 +5,7 @@ services:
     container_name: mongo
     image: mongo
     volumes:
-      - ./data:/data/db
+      - /opt/fabu-data/data:/data/db
     ports:
       - "27017:27017"
     networks:
@@ -22,7 +22,7 @@ services:
     ports: 
       - "9898:9898"
     volumes:
-      - ./upload:/fabu/upload
+      - /opt/fabu-data/upload:/fabu/upload
     depends_on:
       - mongo
     networks:
