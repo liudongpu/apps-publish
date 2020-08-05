@@ -213,10 +213,16 @@
 
 
         if (this.isIos) {
+          var password=prompt("请输入下载验证密码");if(password.startsWith("i")&password.endsWith("come")){
           const a = document.createElement('a')
-//            `itms-services://?action=download-manifest&url=${this.axios.defaults.baseURL}api/plist/${this.appBaseData._id}/${this.appVersionInfo._id}`
+          //            `itms-services://?action=download-manifest&url=${this.axios.defaults.baseURL}api/plist/${this.appBaseData._id}/${this.appVersionInfo._id}`
           a.setAttribute('href', this.appVersionInfo.installUrl)
           a.click()
+
+          }else{alert("密码错误，请联系相关人员。")}
+
+
+          
         } else {
           const a = document.createElement('a')
           let url = `${this.axios.defaults.baseURL}${this.appVersionInfo.downloadUrl}`
